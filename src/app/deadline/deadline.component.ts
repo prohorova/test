@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {RestService} from "../services/rest.service";
 import {map, switchMap, takeWhile} from "rxjs/operators";
 import {Deadline} from "../models/deadline.model";
@@ -10,7 +10,8 @@ import {timer} from "rxjs";
   standalone: true,
   imports: [AsyncPipe],
   templateUrl: './deadline.component.html',
-  styleUrl: './deadline.component.css'
+  styleUrl: './deadline.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DeadlineComponent {
 
